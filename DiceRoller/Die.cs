@@ -13,6 +13,7 @@ namespace DiceRoller;
 /// randm number generation, or other scenarios requirring dice rolls.</remarks>
 public class Die
 {
+    private const byte MAX_SIDES = 20; 
     private static readonly Random rand new(); 
     /// <summary>
     /// Initiaalizes a new instance of the <see cref="Die"/> class
@@ -25,7 +26,7 @@ public class Die
     
     public Die(byte numSides)
     {
-        if (numSides == 0 || numSides > 20)
+        if (numSides == 0 || numSides > MAX_SIDES)
         {
             throw new ArgumentOutOfRangeException(nameof(numSides), 
                 $"{nameof(numSides)} must be greater than 0 and less than 21");
