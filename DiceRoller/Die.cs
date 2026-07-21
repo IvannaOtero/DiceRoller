@@ -13,6 +13,7 @@ namespace DiceRoller;
 /// randm number generation, or other scenarios requirring dice rolls.</remarks>
 public class Die
 {
+    private static readonly Random rand new(); 
     /// <summary>
     /// Initiaalizes a new instance of the <see cref="Die"/> class
     /// with specified number of sides
@@ -54,7 +55,7 @@ public class Die
     /// sides of the die, inclusive</returns>
     public byte Roll()
     {
-        Random rand = new();
+        
         FaceUpValue = Convert.ToByte(rand.Next(1, NumberOfSides + 1));
 
         return FaceUpValue; 
